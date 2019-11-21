@@ -1281,14 +1281,14 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   var _reactNative = _$$_REQUIRE(_dependencyMap[1], "react-native");
 
-  var _App = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "./App"));
+  var _App = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "./src/App"));
 
   var _app = _$$_REQUIRE(_dependencyMap[3], "./app.json");
 
   _reactNative.AppRegistry.registerComponent(_app.name, function () {
     return _App.default;
   });
-},0,[1,2,445,446],"index.js");
+},0,[1,2,834,446],"index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
@@ -95584,312 +95584,6 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   module.exports = PointPropType;
 },444,[71],"node_modules/react-native/Libraries/DeprecatedPropTypes/DeprecatedPointPropType.js");
-__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
-
-  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = void 0;
-
-  var _slicedToArray2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/slicedToArray"));
-
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[3], "react"));
-
-  var _reactNative = _$$_REQUIRE(_dependencyMap[4], "react-native");
-
-  var _MaterialCommunityIcons = _$$_REQUIRE(_dependencyMap[5], "react-native-vector-icons/MaterialCommunityIcons");
-
-  var _dateFns = _$$_REQUIRE(_dependencyMap[6], "date-fns");
-
-  var _jsxFileName = "/Users/johan/Source/weatherornot/App.js",
-      _s = $RefreshSig$(),
-      _s2 = $RefreshSig$();
-
-  var CurrentTime = function CurrentTime(_ref) {
-    var date = _ref.date;
-    return _react.default.createElement(_reactNative.View, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 24
-      }
-    }, _react.default.createElement(_reactNative.Text, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 25
-      }
-    }, (0, _dateFns.format)(date, 'HH:mm')));
-  };
-
-  _c = CurrentTime;
-
-  var CurrentDate = function CurrentDate(_ref2) {
-    var date = _ref2.date;
-    return _react.default.createElement(_reactNative.View, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 30
-      }
-    }, _react.default.createElement(_reactNative.Text, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 31
-      }
-    }, (0, _dateFns.format)(date, 'd MMM').toUpperCase()));
-  };
-
-  _c2 = CurrentDate;
-
-  var Header = function Header() {
-    _s();
-
-    var _useState = (0, _react.useState)(new Date()),
-        _useState2 = (0, _slicedToArray2.default)(_useState, 2),
-        date = _useState2[0],
-        setDate = _useState2[1];
-
-    (0, _react.useEffect)(function () {
-      var handle = setTimeout(function () {
-        return setDate(new Date());
-      }, 1000);
-      return function () {
-        return clearTimeout(handle);
-      };
-    }, [date]);
-    return _react.default.createElement(_reactNative.View, {
-      style: styles.header,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 45
-      }
-    }, _react.default.createElement(CurrentTime, {
-      date: date,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 46
-      }
-    }), _react.default.createElement(CurrentDate, {
-      date: date,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 47
-      }
-    }));
-  };
-
-  _s(Header, "Gqi45WOZhU2c0BLYX0HoJeiR0fk=");
-
-  _c3 = Header;
-
-  var WeatherIcon = function WeatherIcon(_ref3) {
-    var current = _ref3.current;
-
-    switch (current) {
-      case 'showers':
-        return _react.default.createElement(_MaterialCommunityIcons.Icon, {
-          name: "weather-rainy",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 55
-          }
-        });
-
-      default:
-        return _react.default.createElement(_reactNative.Text, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 58
-          }
-        });
-    }
-  };
-
-  _c4 = WeatherIcon;
-
-  var Weather = function Weather(_ref4) {
-    var _ref4$temperature = _ref4.temperature,
-        temperature = _ref4$temperature === void 0 ? '-' : _ref4$temperature,
-        _ref4$kind = _ref4.kind,
-        kind = _ref4$kind === void 0 ? 'unknown' : _ref4$kind;
-    return _react.default.createElement(_reactNative.View, {
-      style: styles.content,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 64
-      }
-    }, _react.default.createElement(WeatherIcon, {
-      current: kind,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 65
-      }
-    }), _react.default.createElement(_reactNative.Text, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 66
-      }
-    }, temperature));
-  };
-
-  _c5 = Weather;
-
-  var Footer = function Footer(_ref5) {
-    var _ref5$city = _ref5.city,
-        city = _ref5$city === void 0 ? '-' : _ref5$city,
-        _ref5$country = _ref5.country,
-        country = _ref5$country === void 0 ? '-' : _ref5$country;
-    return _react.default.createElement(_reactNative.View, {
-      style: styles.footer,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 73
-      }
-    }, _react.default.createElement(_reactNative.Text, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 74
-      }
-    }, city.toUpperCase()), _react.default.createElement(_reactNative.Text, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 75
-      }
-    }, country.toUpperCase()));
-  };
-
-  _c6 = Footer;
-
-  var Card = function Card(_ref6) {
-    _s2();
-
-    var location = _ref6.location;
-
-    var _useState3 = (0, _react.useState)(),
-        _useState4 = (0, _slicedToArray2.default)(_useState3, 2),
-        weather = _useState4[0],
-        setWeather = _useState4[1];
-
-    (0, _react.useEffect)(function () {
-      setTimeout(function () {
-        return setWeather({
-          temperature: 13,
-          kind: 'showers'
-        });
-      }, 1000);
-    }, [location]);
-    return _react.default.createElement(_reactNative.View, {
-      style: styles.card,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 88
-      }
-    }, _react.default.createElement(Header, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 89
-      }
-    }), _react.default.createElement(Weather, {
-      weather: weather,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 90
-      }
-    }), _react.default.createElement(Footer, {
-      city: location.city,
-      country: location.country,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 91
-      }
-    }));
-  };
-
-  _s2(Card, "ckY3XUe2jE/3yAZqXdXPBh/jZTc=");
-
-  _c7 = Card;
-
-  var App = function App() {
-    return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_reactNative.StatusBar, {
-      barStyle: "dark-content",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 99
-      }
-    }), _react.default.createElement(_reactNative.SafeAreaView, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 100
-      }
-    }, _react.default.createElement(_reactNative.View, {
-      style: styles.container,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 101
-      }
-    }, _react.default.createElement(Card, {
-      location: {
-        city: 'London',
-        country: 'UK',
-        lattitude: '51.507222',
-        longitude: ' -0.1275'
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 102
-      }
-    }))));
-  };
-
-  _c8 = App;
-  var colors = {
-    dark: '#32353d',
-    yellow: '#e1c866'
-  };
-
-  var styles = _reactNative.StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: colors.dark
-    },
-    card: {
-      backgroundColor: colors.yellow,
-      padding: 20,
-      minHeight: 100,
-      borderRadius: 10,
-      flexDirection: 'column',
-      justifyContent: 'space-around'
-    },
-    header: {
-      flexDirection: 'row',
-      justifyContent: 'space-between'
-    },
-    content: {
-      flexDirection: 'column',
-      alignItems: 'center',
-      flexGrow: 1
-    },
-    footer: {
-      flexDirection: 'row',
-      justifyContent: 'space-between'
-    }
-  });
-
-  var _default = App;
-  exports.default = _default;
-
-  var _c, _c2, _c3, _c4, _c5, _c6, _c7, _c8;
-
-  $RefreshReg$(_c, "CurrentTime");
-  $RefreshReg$(_c2, "CurrentDate");
-  $RefreshReg$(_c3, "Header");
-  $RefreshReg$(_c4, "WeatherIcon");
-  $RefreshReg$(_c5, "Weather");
-  $RefreshReg$(_c6, "Footer");
-  $RefreshReg$(_c7, "Card");
-  $RefreshReg$(_c8, "App");
-},445,[1,9,14,56,2,832,447],"App.js");
 __d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
   module.exports = {
   "name": "weatherornot",
@@ -115290,6 +114984,476 @@ __d(function(global, require, _aUnused, _bUnused, module, exports, _cUnused) {
   "blank": 63116
 };
 },833,[],"node_modules/react-native-vector-icons/glyphmaps/MaterialCommunityIcons.json");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _defineProperty2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/defineProperty"));
+
+  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[3], "react-native");
+
+  var _Card = _$$_REQUIRE(_dependencyMap[4], "./Card");
+
+  var _theme = _$$_REQUIRE(_dependencyMap[5], "./theme");
+
+  var _jsxFileName = "/Users/johan/Source/weatherornot/src/App.js";
+
+  function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+  function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+  var App = function App() {
+    return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_reactNative.StatusBar, {
+      barStyle: "dark-content",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      }
+    }), _react.default.createElement(_reactNative.SafeAreaView, {
+      style: styles.container,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19
+      }
+    }, _react.default.createElement(_Card.Card, {
+      color: _theme.colors.yellow,
+      location: {
+        city: 'London',
+        country: 'UK',
+        lattitude: '51.507222',
+        longitude: ' -0.1275'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20
+      }
+    })));
+  };
+
+  _c = App;
+
+  var styles = _reactNative.StyleSheet.create(_objectSpread({}, _theme.theme, {
+    container: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: _theme.colors.dark
+    }
+  }));
+
+  var _default = App;
+  exports.default = _default;
+
+  var _c;
+
+  $RefreshReg$(_c, "App");
+},834,[1,51,56,2,835,837],"src/App.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  var _interopRequireWildcard = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireWildcard");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.Card = void 0;
+
+  var _defineProperty2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/defineProperty"));
+
+  var _extends2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/extends"));
+
+  var _slicedToArray2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/slicedToArray"));
+
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[5], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[6], "react-native");
+
+  var _Text = _$$_REQUIRE(_dependencyMap[7], "./Text");
+
+  var _MaterialCommunityIcons = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[8], "react-native-vector-icons/MaterialCommunityIcons"));
+
+  var _dateFns = _$$_REQUIRE(_dependencyMap[9], "date-fns");
+
+  var _theme = _$$_REQUIRE(_dependencyMap[10], "./theme");
+
+  var _jsxFileName = "/Users/johan/Source/weatherornot/src/Card.js",
+      _s = $RefreshSig$(),
+      _s2 = $RefreshSig$();
+
+  function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+  function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+  var CurrentTime = function CurrentTime(_ref) {
+    var date = _ref.date;
+    return _react.default.createElement(_reactNative.View, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13
+      }
+    }, _react.default.createElement(_Text.SecondaryText, {
+      style: styles.primary,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 14
+      }
+    }, (0, _dateFns.format)(date, 'HH:mm')));
+  };
+
+  _c = CurrentTime;
+
+  var CurrentDate = function CurrentDate(_ref2) {
+    var date = _ref2.date;
+    return _react.default.createElement(_reactNative.View, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      }
+    }, _react.default.createElement(_Text.SecondaryText, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
+      }
+    }, (0, _dateFns.format)(date, 'd MMM').toUpperCase()));
+  };
+
+  _c2 = CurrentDate;
+
+  var Header = function Header() {
+    _s();
+
+    var _useState = (0, _react.useState)(new Date()),
+        _useState2 = (0, _slicedToArray2.default)(_useState, 2),
+        date = _useState2[0],
+        setDate = _useState2[1];
+
+    (0, _react.useEffect)(function () {
+      var handle = setTimeout(function () {
+        return setDate(new Date());
+      }, 1000);
+      return function () {
+        return clearTimeout(handle);
+      };
+    }, [date]);
+    return _react.default.createElement(_reactNative.View, {
+      style: styles.header,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 36
+      }
+    }, _react.default.createElement(CurrentTime, {
+      date: date,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 37
+      }
+    }), _react.default.createElement(CurrentDate, {
+      date: date,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 38
+      }
+    }));
+  };
+
+  _s(Header, "Gqi45WOZhU2c0BLYX0HoJeiR0fk=");
+
+  _c3 = Header;
+
+  var toIconName = function toIconName(state) {
+    switch (state) {
+      case 'showers':
+        return 'weather-rainy';
+
+      case 'loading':
+        return 'loading';
+
+      default:
+        return 'emoticon-sad-outline';
+    }
+  };
+
+  var WeatherIcon = function WeatherIcon(_ref3) {
+    var current = _ref3.current;
+    return _react.default.createElement(_MaterialCommunityIcons.default, {
+      style: styles.weatherIcon,
+      name: toIconName(current),
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 57
+      }
+    });
+  };
+
+  _c4 = WeatherIcon;
+
+  var Temperature = function Temperature(_ref4) {
+    var value = _ref4.value;
+    var text = value ? value + "\xB0" : '-';
+    return _react.default.createElement(_Text.PrimaryText, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 63
+      }
+    }, text);
+  };
+
+  _c5 = Temperature;
+
+  var toWeatherText = function toWeatherText(kind) {
+    switch (kind) {
+      case 'sunny':
+        return 'SUNNY';
+
+      case 'showers':
+        return 'SHOWERS';
+
+      default:
+        return '-';
+    }
+  };
+
+  var Weather = function Weather(_ref5) {
+    var temperature = _ref5.temperature,
+        _ref5$kind = _ref5.kind,
+        kind = _ref5$kind === void 0 ? 'unknown' : _ref5$kind;
+    return _react.default.createElement(_reactNative.View, {
+      style: styles.weather,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 81
+      }
+    }, _react.default.createElement(WeatherIcon, {
+      current: kind,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 82
+      }
+    }), _react.default.createElement(Temperature, {
+      value: temperature,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 83
+      }
+    }), _react.default.createElement(_Text.SecondaryText, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 84
+      }
+    }, toWeatherText(kind)));
+  };
+
+  _c6 = Weather;
+
+  var Footer = function Footer(_ref6) {
+    var _ref6$city = _ref6.city,
+        city = _ref6$city === void 0 ? '-' : _ref6$city,
+        _ref6$country = _ref6.country,
+        country = _ref6$country === void 0 ? '-' : _ref6$country;
+    return _react.default.createElement(_reactNative.View, {
+      style: styles.footer,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 91
+      }
+    }, _react.default.createElement(_Text.SecondaryText, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 92
+      }
+    }, city.toUpperCase()), _react.default.createElement(_Text.SecondaryText, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 93
+      }
+    }, country.toUpperCase()));
+  };
+
+  _c7 = Footer;
+
+  var Card = function Card(_ref7) {
+    _s2();
+
+    var location = _ref7.location,
+        color = _ref7.color;
+
+    var _useState3 = (0, _react.useState)(),
+        _useState4 = (0, _slicedToArray2.default)(_useState3, 2),
+        weather = _useState4[0],
+        setWeather = _useState4[1];
+
+    (0, _react.useEffect)(function () {
+      setTimeout(function () {
+        return setWeather({
+          temperature: 13,
+          kind: 'showers'
+        });
+      }, 1000);
+    }, [location]);
+    return _react.default.createElement(_reactNative.View, {
+      style: styles.card,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 106
+      }
+    }, _react.default.createElement(Header, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 107
+      }
+    }), _react.default.createElement(Weather, (0, _extends2.default)({}, weather, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 108
+      }
+    })), _react.default.createElement(Footer, {
+      city: location.city,
+      country: location.country,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 109
+      }
+    }));
+  };
+
+  exports.Card = Card;
+
+  _s2(Card, "ckY3XUe2jE/3yAZqXdXPBh/jZTc=");
+
+  _c8 = Card;
+  var padding = 20;
+  var bar = {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: padding
+  };
+
+  var styles = _reactNative.StyleSheet.create({
+    card: {
+      minHeight: 450,
+      minWidth: 300,
+      borderRadius: 10,
+      justifyContent: 'space-around'
+    },
+    header: _objectSpread({}, bar, {
+      flexDirection: 'row',
+      justifyContent: 'space-between'
+    }),
+    footer: _objectSpread({}, bar, {
+      borderTopColor: _theme.colors.contrast,
+      borderTopWidth: 2
+    }),
+    weather: {
+      alignItems: 'center',
+      justifyContent: 'space-around',
+      padding: padding,
+      flexGrow: 1,
+      fontSize: 72
+    },
+    weatherIcon: {
+      fontSize: 144,
+      color: _theme.colors.contrast
+    }
+  });
+
+  var _c, _c2, _c3, _c4, _c5, _c6, _c7, _c8;
+
+  $RefreshReg$(_c, "CurrentTime");
+  $RefreshReg$(_c2, "CurrentDate");
+  $RefreshReg$(_c3, "Header");
+  $RefreshReg$(_c4, "WeatherIcon");
+  $RefreshReg$(_c5, "Temperature");
+  $RefreshReg$(_c6, "Weather");
+  $RefreshReg$(_c7, "Footer");
+  $RefreshReg$(_c8, "Card");
+},835,[1,9,51,13,14,56,2,836,832,447,837],"src/Card.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  var _interopRequireDefault = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault");
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.SecondaryText = exports.PrimaryText = void 0;
+
+  var _extends2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/extends"));
+
+  var _objectWithoutProperties2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/objectWithoutProperties"));
+
+  var _defineProperty2 = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/defineProperty"));
+
+  var _react = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[4], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[5], "react-native");
+
+  var _theme = _$$_REQUIRE(_dependencyMap[6], "./theme");
+
+  var _jsxFileName = "/Users/johan/Source/weatherornot/src/Text.js";
+
+  function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+  function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+  var styles = _reactNative.StyleSheet.create({
+    primaryText: _objectSpread({}, _theme.theme.primary, {
+      fontSize: 42
+    }),
+    secondaryText: _objectSpread({}, _theme.theme.secondary, {
+      fontSize: 26,
+      fontWeight: '500'
+    })
+  });
+
+  var styledText = function styledText(baseStyle) {
+    return function (_ref) {
+      var style = _ref.style,
+          props = (0, _objectWithoutProperties2.default)(_ref, ["style"]);
+
+      var mergedStyle = _objectSpread({}, baseStyle, {}, style);
+
+      return _react.default.createElement(_reactNative.Text, (0, _extends2.default)({
+        style: mergedStyle
+      }, props, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24
+        }
+      }));
+    };
+  };
+
+  var PrimaryText = styledText(styles.primaryText);
+  exports.PrimaryText = PrimaryText;
+  var SecondaryText = styledText(styles.secondaryText);
+  exports.SecondaryText = SecondaryText;
+},836,[1,13,52,51,56,2,837],"src/Text.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.theme = exports.colors = void 0;
+  var colors = {
+    dark: '#32353d',
+    yellow: '#e1c866',
+    primary: '#6d5c23',
+    contrast: '#fffceb'
+  };
+  exports.colors = colors;
+  var theme = {
+    primary: {
+      color: colors.primary
+    },
+    secondary: {
+      color: colors.contrast
+    }
+  };
+  exports.theme = theme;
+},837,[],"src/theme.js");
 __r(98);
 __r(0);
 //# sourceMappingURL=index.map
